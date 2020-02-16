@@ -6,6 +6,7 @@ export default function Todo ({ name, description }) {
     <div data-testid='todo'>
       <h3 data-testid='name'>{ name }</h3>
       <p data-testid='description'>{ description }</p>
+      <input data-testid='checkbox' type='checkbox'></input>
     </div>
   )
 }

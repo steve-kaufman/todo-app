@@ -30,3 +30,14 @@ it('has a description', () => {
   expect(description).not.toBeNull()
   expect(description).toHaveTextContent(/bar/i)
 })
+
+it('has a checkbox', () => {
+  // arrange
+  const { queryByTestId } = render(<Todo name='foo' description='bar' />)
+  // act
+  const checkbox = queryByTestId('checkbox')
+  // assert
+  expect(checkbox).not.toBeNull()
+  expect(checkbox.tagName).toBe('INPUT')
+  expect(checkbox.type).toBe('checkbox')
+})
