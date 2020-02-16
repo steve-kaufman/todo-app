@@ -5,7 +5,7 @@ import Todo from './components/Todo'
 function App() {
   return (
     <div className="App" data-testid='app'>
-      <Todo name='Take out the trash' />
+      <Todo name='Trash' description='Take out the trash tonight' />
     </div>
   );
 }

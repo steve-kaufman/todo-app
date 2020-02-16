@@ -20,3 +20,13 @@ it('has a name', () => {
   expect(name).not.toBeNull()
   expect(name).toHaveTextContent(/foo/i)
 })
+
+it('has a description', () => {
+  // arrange
+  const { queryByTestId } = render(<Todo name='foo' description='bar' />)
+  // act
+  const description = queryByTestId('description')
+  // assert
+  expect(description).not.toBeNull()
+  expect(description).toHaveTextContent(/bar/i)
+})
