@@ -23,7 +23,7 @@ it('has a name', () => {
 
 it('has a description', () => {
   // arrange
-  const { queryByTestId } = render(<Todo name='foo' description='bar' />)
+  const { queryByTestId } = render(<Todo description='bar' />)
   // act
   const description = queryByTestId('description')
   // assert
@@ -33,11 +33,22 @@ it('has a description', () => {
 
 it('has a checkbox', () => {
   // arrange
-  const { queryByTestId } = render(<Todo name='foo' description='bar' />)
+  const { queryByTestId } = render(<Todo />)
   // act
   const checkbox = queryByTestId('checkbox')
   // assert
   expect(checkbox).not.toBeNull()
   expect(checkbox.tagName).toBe('INPUT')
   expect(checkbox.type).toBe('checkbox')
+})
+
+it('has a delete button', () => {
+  // arrange
+  const { queryByTestId } = render(<Todo />)
+  // act
+  const deleteButton = queryByTestId('delete-button')
+  // assert
+  expect(deleteButton).not.toBeNull()
+  expect(deleteButton.tagName).toBe('BUTTON')
+  expect(deleteButton).toHaveTextContent(/delete/i)
 })
