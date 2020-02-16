@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.sass'
+import './styles/App.sass'
 import Todo from './components/Todo'
 
 function App() {
