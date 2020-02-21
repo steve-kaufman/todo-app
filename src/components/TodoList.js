@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
+import '../styles/components/TodoList.sass'
 
 function TodoList ({ todos }) {
   return (
-    <ul data-testid='todo-list'>
+    <ul data-testid='todo-list' id='todo-list'>
       {todos.map((todo, index) => {
         const { id, name, description, isCompleted } = todo
         return <Todo 
