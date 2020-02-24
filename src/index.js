@@ -8,7 +8,10 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
-  <Provider store={ configureStore() }>
+  <Provider store={ configureStore({todos: [
+    { id: 7, name: 'Trash', description: 'Take out the trash tonight', isCompleted: false },
+    { id: 8, name: 'Dishes', description: 'Do the dishes', isCompleted: false }
+  ]}) }>
     <App />
   </Provider>, 
   document.getElementById('root')
