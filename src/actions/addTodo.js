@@ -1,10 +1,10 @@
 let nextTodoId = 0
 
-export default (title, description) => dispatch => {
+export default (name, description) => dispatch => {
   dispatch({
     type: 'ADD_TODO',
     id: nextTodoId++,
-    title,
+    name,
     description
   })
 }
