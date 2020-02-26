@@ -5,9 +5,9 @@ export default (state = [], action) => {
         ...state,
         {
           id: action.id,
-          title: action.title,
+          name: action.name,
           description: action.description,
-          completed: false
+          isCompleted: false
         }
       ]
     case 'TOGGLE_TODO':
@@ -15,9 +15,7 @@ export default (state = [], action) => {
         todo.id === action.id ? {...todo, completed: !todo.completed} : todo
       )
     case 'DELETE_TODO':
-      return [ ...state ].forEach((todo, index, array) => {
-        if (todo.id === action.id) delete array[index]
-      })
+      return [ ...state ].filter(todo => todo.id !== action.id)
     default:
       return state
   }

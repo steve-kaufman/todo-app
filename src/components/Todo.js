@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../styles/components/Todo.sass'
 
-function Todo ({ name, description, isCompleted }) {
-  return (
-    <div data-testid='todo' className='todo'>
+function Todo ({ name, description, isCompleted, isLast }) {
+  return (<>
+    <li data-testid='todo' className='todo'>
       <div className='todo-content'>
         <h3 data-testid='name'>{name}</h3>
         <p data-testid='description'>{description}</p>
@@ -17,7 +17,9 @@ function Todo ({ name, description, isCompleted }) {
         />
         <button data-testid='delete-button'>Delete</button>
       </div>
-    </div>
+    </li>
+    {isLast ? null : <hr/>}
+    </>
   )
 }
 

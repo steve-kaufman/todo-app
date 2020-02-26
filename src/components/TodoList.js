@@ -8,14 +8,16 @@ function TodoList ({ todos }) {
     <ul data-testid='todo-list' id='todo-list'>
       {todos.map((todo, index) => {
         const { id, name, description, isCompleted } = todo
-        return <Todo 
-          key={ index }
-          id={ id } 
-          name={ name } 
-          description={ description } 
-          isCompleted={ isCompleted }
-        />
-      })}
+        const isLastTodo = (index === todos.length - 1)
+        return (
+          <Todo 
+            key={ index }
+            id={ id } 
+            name={ name } 
+            description={ description } 
+            isCompleted={ isCompleted }
+          />
+      )})}
     </ul>
   )
 }
