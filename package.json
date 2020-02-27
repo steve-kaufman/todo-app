@@ -32,6 +32,8 @@
     ]
   },
   "devDependencies": {
+    "@iconify/icons-mdi": "^1.0.74",
+    "@iconify/react": "^1.1.2",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react-redux": "^7.1.3",

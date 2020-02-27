@@ -38,12 +38,11 @@ describe('AddTodo', () => {
   })
   it('has an add button', () => {
     // arrange
-    const { queryByText } = addTodo
+    const { queryByTestId } = addTodo
     // act
-    const addButton = queryByText(/add/i)
+    const addButton = queryByTestId('add-button')
     // assert
     expect(addButton).not.toBeNull()
     expect(addButton.tagName).toBe('BUTTON')
-    expect(addButton.type).toBe('submit')
   })
 })
