@@ -58,6 +58,5 @@ describe('Todo', () => {
     // assert
     expect(deleteButton).not.toBeNull()
     expect(deleteButton.tagName).toBe('BUTTON')
-    expect(deleteButton).toHaveTextContent(/delete/i)
   })
 })

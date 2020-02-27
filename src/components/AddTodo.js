@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { Icon } from '@iconify/react'
+import plusCircle from '@iconify/icons-mdi/plus-circle'
 
 import '../styles/components/AddTodo.sass'
 
@@ -29,7 +31,9 @@ function AddTodo ({ addTodo }) {
         </div>
         <input type='submit' style={{ display: 'none' }} />
       </form>
-      <button onClick={ submit }>Add</button>
+      <button onClick={ submit } data-testid='add-button'>
+        <Icon icon={plusCircle}/>
+      </button>
     </div>
   )
 }

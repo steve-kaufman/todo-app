@@ -1,4 +1,6 @@
 import React from 'react'
+import { Icon } from '@iconify/react'
+import trashCan from '@iconify/icons-mdi/trash-can'
 import PropTypes from 'prop-types'
 import '../styles/components/Todo.sass'
 
@@ -18,7 +20,9 @@ function Todo ({ name, description, isCompleted, isLast }) {
           />
           <span className="fancy-checkbox"></span>
         </label>
-        <button data-testid='delete-button'>Delete</button>
+        <button data-testid='delete-button'>
+          <Icon icon={trashCan}/>
+        </button>
       </div>
     </li>
     {isLast ? null : <hr/>}
