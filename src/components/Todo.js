@@ -7,11 +7,7 @@ import '../styles/components/Todo.sass'
 function Todo ({ name, description, isCompleted, isLast }) {
   return (<>
     <li data-testid='todo' className='todo'>
-      <div className='todo-content'>
-        <h3 data-testid='name'>{name}</h3>
-        <p data-testid='description'>{description}</p>
-      </div>
-      <div className="todo-controls">
+      <div className='left-float'>
         <label className='checkbox-label'>
           <input
             data-testid='checkbox'
@@ -19,11 +15,15 @@ function Todo ({ name, description, isCompleted, isLast }) {
             defaultChecked={isCompleted}
           />
           <span className="fancy-checkbox"></span>
-        </label>
-        <button data-testid='delete-button'>
-          <Icon icon={trashCan}/>
-        </button>
+        </label>  
+        <div className='todo-text'>
+          <h3 data-testid='name'>{name}</h3>
+          <p data-testid='description'>{description}</p>
+        </div>
       </div>
+      <button data-testid='delete-button'>
+        <Icon icon={trashCan}/>
+      </button>
     </li>
     {isLast ? null : <hr/>}
     </>
