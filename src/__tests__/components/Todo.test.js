@@ -7,7 +7,15 @@ describe('Todo', () => {
   let todo = null
 
   beforeEach(() => {
-    todo = render(<Todo name='foo' description='bar' isCompleted={false} />)
+    todo = render(<Todo 
+      id={2}
+      name='foo' 
+      description='bar' 
+      isCompleted={false} 
+      isLast={false}
+      toggleTodo={jest.fn()}
+      deleteTodo={jest.fn()}
+    />)
   })
 
   it('renders', () => {

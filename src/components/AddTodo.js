@@ -11,21 +11,22 @@ function AddTodo ({ addTodo }) {
 
   const submit = event => {
     event.preventDefault()
-    console.log(name, description)
     addTodo(name, description)
+    setName('')
+    setDescription('')
   }
   return (
     <div id='add-todo'>
       <form onSubmit={ submit } data-testid='add-todo-form'>
         <div className='input-group'>
           <label htmlFor='name-input'>Name</label>
-          <input id='name-input' onChange={event => {
+          <input id='name-input' value={name} onChange={event => {
             setName(event.target.value)
           }} />
         </div>
         <div className='input-group'>
           <label htmlFor='description-input'>Description</label>
-          <input id='description-input' onChange={event => {
+          <input id='description-input' value={description} onChange={event => {
             setDescription(event.target.value)
           }} />
         </div>

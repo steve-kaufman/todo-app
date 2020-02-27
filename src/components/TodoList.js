@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Todo from './Todo'
+import Todo from '../containers/Todo'
 import '../styles/components/TodoList.sass'
 
 function TodoList ({ todos }) {

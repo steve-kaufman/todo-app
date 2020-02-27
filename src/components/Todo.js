@@ -4,7 +4,16 @@ import trashCan from '@iconify/icons-mdi/trash-can'
 import PropTypes from 'prop-types'
 import '../styles/components/Todo.sass'
 
-function Todo ({ name, description, isCompleted, isLast }) {
+function Todo (props) {
+  const { 
+    id,
+    name, 
+    description, 
+    isCompleted, 
+    isLast, 
+    toggleTodo, 
+    deleteTodo 
+  } = props
   return (<>
     <li data-testid='todo' className='todo'>
       <div className='left-float'>
@@ -12,6 +21,7 @@ function Todo ({ name, description, isCompleted, isLast }) {
           <input
             data-testid='checkbox'
             type='checkbox'
+            onClick={() => toggleTodo(id)}
             defaultChecked={isCompleted}
           />
           <span className="fancy-checkbox"></span>
@@ -21,7 +31,7 @@ function Todo ({ name, description, isCompleted, isLast }) {
           <p data-testid='description'>{description}</p>
         </div>
       </div>
-      <button data-testid='delete-button'>
+      <button data-testid='delete-button' onClick={() => deleteTodo(id)}>
         <Icon icon={trashCan}/>
       </button>
     </li>
@@ -31,9 +41,13 @@ function Todo ({ name, description, isCompleted, isLast }) {
 }
 
 Todo.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  isCompleted: PropTypes.bool.isRequired
+  isCompleted: PropTypes.bool.isRequired,
+  isLast: PropTypes.bool.isRequired,
+  toggleTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired
 }
 
 export default Todo
