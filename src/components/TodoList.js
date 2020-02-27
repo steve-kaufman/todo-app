@@ -16,6 +16,7 @@ function TodoList ({ todos }) {
             name={ name } 
             description={ description } 
             isCompleted={ isCompleted }
+            isLast={ isLastTodo }
           />
       )})}
     </ul>
