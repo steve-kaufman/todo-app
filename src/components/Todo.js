@@ -10,11 +10,14 @@ function Todo ({ name, description, isCompleted, isLast }) {
         <p data-testid='description'>{description}</p>
       </div>
       <div className="todo-controls">
-        <input 
-          data-testid='checkbox' 
-          type='checkbox' 
-          defaultChecked={isCompleted} 
-        />
+        <label className='checkbox-label'>
+          <input
+            data-testid='checkbox'
+            type='checkbox'
+            defaultChecked={isCompleted}
+          />
+          <span className="fancy-checkbox"></span>
+        </label>
         <button data-testid='delete-button'>Delete</button>
       </div>
     </li>

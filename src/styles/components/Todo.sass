@@ -10,9 +10,7 @@ li.todo
     display: flex
     justify-content: space-between
     align-items: center
-    width: 90px
-    input[type="checkbox"]
-      margin: 0
+    width: 100px
     button
       margin: 0
       border-radius: 5px
@@ -20,3 +18,49 @@ li.todo
       padding: 5px 10px
       background: #800
       color: white
+
+li.todo div.todo-controls label.checkbox-label
+  display: block
+  position: relative
+  height: 24px
+  width: 24px
+  input[type='checkbox']
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    &:checked ~ .fancy-checkbox
+      background-color: #bbb
+      &::after
+        transform: rotate(40deg) scale(1)
+        -webkit-transform: rotate(40deg) scale(1)
+        opacity: 1
+        left: 10px
+        top: -4px
+        width: 7px
+        height: 20px
+        background-color: transparent
+  .fancy-checkbox
+    position: absolute
+    top: 0px
+    left: 0px
+    height: 24px
+    width: 24px
+    background-color: transparent
+    border-radius: 50%
+    transition: all 0.2s ease-out
+    -webkit-transition: all 0.2s ease-out
+    border: 2px solid #888
+    &::after
+      position: absolute
+      content: ""
+      left: 12px
+      top: 12px
+      height: 0px
+      width: 0px
+      border: solid #444
+      border-width: 0 3px 3px 0
+      transform: rotate(0deg) scale(0)
+      -webkit-transform: rotate(0deg) scale(0)
+      opacity: 1
+      transition: all 0.2s ease-out
+      -webkit-transition: all 0.2s ease-out
