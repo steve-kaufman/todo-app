@@ -1,13 +1,15 @@
 import React from 'react'
 import './styles/App.sass'
-import AddTodo from './containers/AddTodo';
+import TodoForm from './containers/TodoForm';
 import TodoList from './containers/TodoList'
+import AddButton from './containers/AddButton'
 
 function App() {
   return (
     <div className="App" data-testid='app'>
-      <AddTodo />
       <TodoList />
+      <AddButton />
+      <TodoForm />
     </div>
   );
 }

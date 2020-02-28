@@ -1,26 +1,26 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import AddTodo from '../../components/AddTodo'
+import TodoForm from '../../components/TodoForm'
 
-describe('AddTodo', () => {
-  let addTodo = null
+describe('TodoForm', () => {
+  let todoForm = null
 
   beforeEach(() => {
-    addTodo = render(<AddTodo addTodo={jest.fn()} />)
+    todoForm = render(<TodoForm addTodo={jest.fn()} />)
   })
 
   it('renders', () => {
     // arrange
-    const { queryByTestId } = addTodo
+    const { queryByTestId } = todoForm
     // act
-    const addTodoElement = queryByTestId('add-todo-form')
+    const todoFormElement = queryByTestId('todo-form-form')
     // assert
-    expect(addTodoElement).not.toBeNull()
-    expect(addTodoElement.tagName).toBe('FORM')
+    expect(todoFormElement).not.toBeNull()
+    expect(todoFormElement.tagName).toBe('FORM')
   })
   it('has a name input', () => {
     // arrange
-    const { queryByLabelText } = addTodo
+    const { queryByLabelText } = todoForm
     // act
     const nameInput = queryByLabelText(/name/i)
     // assert
@@ -29,7 +29,7 @@ describe('AddTodo', () => {
   })
   it('has a description input', () => {
     // arrange
-    const { queryByLabelText } = addTodo
+    const { queryByLabelText } = todoForm
     // act
     const descriptionInput = queryByLabelText(/description/i)
     // assert
@@ -38,7 +38,7 @@ describe('AddTodo', () => {
   })
   it('has an add button', () => {
     // arrange
-    const { queryByTestId } = addTodo
+    const { queryByTestId } = todoForm
     // act
     const addButton = queryByTestId('add-button')
     // assert
