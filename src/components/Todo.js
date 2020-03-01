@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from '@iconify/react'
-import trashCan from '@iconify/icons-mdi/trash-can'
+import removeCircle from '@iconify/icons-el/remove-circle'
 import PropTypes from 'prop-types'
 import '../styles/components/Todo.sass'
 
@@ -14,8 +14,11 @@ function Todo (props) {
     toggleTodo, 
     deleteTodo 
   } = props
+
+  const className = 'todo ' + (isCompleted ? 'completed' : '')
+
   return (<>
-    <li data-testid='todo' className='todo'>
+    <li data-testid='todo' className={className}>
       <div className='left-float'>
         <label className='checkbox-label'>
           <input
@@ -32,7 +35,7 @@ function Todo (props) {
         </div>
       </div>
       <button data-testid='delete-button' onClick={() => deleteTodo(id)}>
-        <Icon icon={trashCan}/>
+        <Icon icon={removeCircle}/>
       </button>
     </li>
     {isLast ? null : <hr/>}

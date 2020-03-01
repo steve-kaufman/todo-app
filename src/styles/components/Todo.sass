@@ -3,6 +3,8 @@ li.todo
   align-items: center
   justify-content: space-between
   padding: 10px 10px 10px 20px
+  &.completed
+    background: #ddd
   div.todo-text
     margin-left: 15px
     width: 60vw
@@ -20,7 +22,7 @@ li.todo
     cursor: pointer
     font-size: 24px
     font-weight: bold
-    color: #c33
+    color: #C32F27
 
 li.todo div.left-float label.checkbox-label
   display: block
@@ -32,7 +34,7 @@ li.todo div.left-float label.checkbox-label
     opacity: 0
     cursor: pointer
     &:checked ~ .fancy-checkbox
-      background-color: #bbb
+      background-color: #E1CA96
       &::after
         transform: rotate(40deg) scale(1)
         -webkit-transform: rotate(40deg) scale(1)

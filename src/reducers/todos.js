@@ -11,8 +11,10 @@ export default (state = [], action) => {
         }
       ]
     case 'TOGGLE_TODO':
-      return state.map(todo => 
-        todo.id === action.id ? {...todo, completed: !todo.completed} : todo
+      return state.map(todo => todo.id === action.id ? 
+        {
+          ...todo, isCompleted: !todo.isCompleted
+        } : todo
       )
     case 'DELETE_TODO':
       return [ ...state ].filter(todo => todo.id !== action.id)
