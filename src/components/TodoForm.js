@@ -8,6 +8,8 @@ function TodoForm ({ addTodo, showTodoForm, isVisible }) {
   const [description, setDescription] = useState('')
 
   const cancel = () => {
+    setName('')
+    setDescription('')
     showTodoForm(false)
   }
 
@@ -28,15 +30,27 @@ function TodoForm ({ addTodo, showTodoForm, isVisible }) {
       <form onSubmit={save} data-testid='todo-form-form'>
         <div className='input-group'>
           <label htmlFor='name-input'>Name</label>
-          <input id='name-input' value={name} onChange={event => {
-            setName(event.target.value)
-          }} />
+          <input 
+            id='name-input' 
+            name='name'
+            value={name} 
+            autoComplete='off'
+            onChange={event => {
+              setName(event.target.value)
+            }} 
+          />
         </div>
         <div className='input-group'>
           <label htmlFor='description-input'>Description</label>
-          <input id='description-input' value={description} onChange={event => {
-            setDescription(event.target.value)
-          }} />
+          <input 
+            id='description-input' 
+            name='description'
+            value={description} 
+            autoComplete='off'
+            onChange={event => {
+              setDescription(event.target.value)
+            }} 
+          />
         </div>
         <input type='submit' style={{ display: 'none' }} />
       </form>
