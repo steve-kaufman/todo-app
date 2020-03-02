@@ -1,8 +1,11 @@
+@import ../colors
+
 li.todo
   display: flex
+  width: 90%
+  padding: 15px 10px
   align-items: center
   justify-content: space-between
-  padding: 10px 10px 10px 20px
   &.completed
     background: #ddd
   div.todo-text
@@ -22,7 +25,7 @@ li.todo
     cursor: pointer
     font-size: 24px
     font-weight: bold
-    color: #C32F27
+    color: #{$bad}
 
 li.todo div.left-float label.checkbox-label
   display: block

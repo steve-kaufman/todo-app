@@ -1,39 +1,42 @@
+@import ../colors
+
 div#todo-form
-  background: white
-  padding: 30px
-  padding-top: 40px
+  background: transparent
+  padding: 0 30px
   position: absolute
   width: 100vw
   bottom: 0
+  hr
+    margin-bottom: 30px
   form
     width: 100%
     div.input-group
       display: flex
       flex-direction: column
       label
+        font-size: 18px
         font-weight: bold
         margin-bottom: 5px
       input
         margin-bottom: 20px
-        font-size: 18px
         padding: 4px
         border-radius: 5px
         border: 1px solid #888
-        box-sizing: border-box
         outline: none
+        &#name-input
+          font-size: 1.3em
+        &#description-input
+          font-size: 1.2em
   div#todo-form-buttons
     display: flex
     justify-content: space-between
-    padding: 15px 30px
+    padding: 10px 50px
     button
-      width: 80px
-      height: 30px
-      border-radius: 10px
       border: none
       background: transparent
-      font-size: 18px
-      font-weight: bold
       &.save-button
-        color: #031927
+        font-size: 2em
+        color: #{$primary}
       &.cancel-button
-        color: #c33
+        font-size: 1.5em
+        color: #{$bad}

@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { Icon } from '@iconify/react'
+import checkBold from '@iconify/icons-mdi/check-bold'
+import removeIcon from '@iconify/icons-el/remove'
 
 import '../styles/components/TodoForm.sass'
 
@@ -27,6 +30,7 @@ function TodoForm ({ addTodo, showTodoForm, isVisible }) {
 
   return (
     <div id='todo-form' style={style}>
+      <hr/>
       <form onSubmit={save} data-testid='todo-form-form'>
         <div className='input-group'>
           <label htmlFor='name-input'>Name</label>
@@ -59,12 +63,16 @@ function TodoForm ({ addTodo, showTodoForm, isVisible }) {
           onClick={cancel} 
           data-testid='cancel-button'
           className='cancel-button'
-        >Cancel</button>
+        >
+          <Icon icon={removeIcon} />
+        </button>
         <button 
           onClick={save} 
           data-testid='save-button'
           className='save-button'
-        >Save</button>
+        >
+          <Icon icon={checkBold} />
+        </button>
       </div>
     </div>
   )

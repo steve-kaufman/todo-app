@@ -24,8 +24,8 @@ function Todo (props) {
           <input
             data-testid='checkbox'
             type='checkbox'
-            onClick={() => toggleTodo(id)}
-            defaultChecked={isCompleted}
+            onChange={() => toggleTodo(id)}
+            checked={isCompleted}
           />
           <span className="fancy-checkbox"></span>
         </label>  
