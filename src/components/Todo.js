@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
 import removeCircle from '@iconify/icons-el/remove-circle'
 import PropTypes from 'prop-types'
 import '../styles/components/Todo.sass'
+
+const animationLength = 0.3
 
 function Todo (props) {
   const { 
@@ -17,6 +19,14 @@ function Todo (props) {
 
   const className = 'todo ' + (isCompleted ? 'completed' : '')
 
+  const [isChecked, setChecked] = useState(isCompleted)
+
+  const onCheck = e => {
+    setChecked(!isChecked)
+    toggleTodo(id)
+    // setTimeout(() => toggleTodo(id), (1000 * animationLength))
+  }
+
   return (<>
     <li data-testid='todo' className={className}>
       <div className='left-float'>
@@ -24,8 +34,8 @@ function Todo (props) {
           <input
             data-testid='checkbox'
             type='checkbox'
-            onChange={() => toggleTodo(id)}
-            checked={isCompleted}
+            onChange={onCheck}
+            checked={isChecked}
           />
           <span className="fancy-checkbox"></span>
         </label>  
