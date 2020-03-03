@@ -1,15 +1,17 @@
 @import ../colors
 
 div#todo-form
-  background: transparent
-  padding: 0 30px
+  background: #{$background}
+  padding: 0
   position: absolute
   width: 100vw
   bottom: 0
   hr
-    margin-bottom: 30px
+    border: 2px solid #888
+    margin-bottom: 20px
   form
-    width: 100%
+    width: 80%
+    margin: 0 auto
     div.input-group
       display: flex
       flex-direction: column
@@ -30,7 +32,8 @@ div#todo-form
   div#todo-form-buttons
     display: flex
     justify-content: space-between
-    padding: 10px 50px
+    padding: 10px 100px
+    margin-bottom: 20px
     button
       border: none
       background: transparent

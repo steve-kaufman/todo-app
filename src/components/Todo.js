@@ -4,8 +4,6 @@ import removeCircle from '@iconify/icons-el/remove-circle'
 import PropTypes from 'prop-types'
 import '../styles/components/Todo.sass'
 
-const animationLength = 0.3
-
 function Todo (props) {
   const { 
     id,
@@ -24,7 +22,6 @@ function Todo (props) {
   const onCheck = e => {
     setChecked(!isChecked)
     toggleTodo(id)
-    // setTimeout(() => toggleTodo(id), (1000 * animationLength))
   }
 
   return (<>
